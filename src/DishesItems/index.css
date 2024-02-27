@@ -1,0 +1,114 @@
+.dishes-list-items {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  column-gap: 10px;
+}
+
+.dish-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+
+.name-currency-container {
+  flex-grow: 1;
+}
+
+.calories {
+  font-weight: 500;
+  color: #ffa500;
+}
+
+.dish-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  .dish-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.dish-name {
+  font-size: 22px;
+  color: #000000;
+}
+
+.currency {
+  font-size: 20px;
+  color: lightgray;
+}
+
+.customize-btn {
+  background-color: #338218;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.minus-btn,
+.plus-btn {
+  background-color: transparent;
+  padding: 0px;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.quantity {
+  font-size: 20px;
+}
+
+.cart-count {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #ff6347;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.veg-border {
+  border: 1px solid #00923f;
+  align-self: flex-start;
+}
+
+.non-veg-border {
+  border: 1px solid #92282a;
+}
+
+.veg-round {
+  background-color: #00923f;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin: 5px;
+}
+@media screen and(min-width: 768px) {
+  .veg-round {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.non-veg-round {
+  background-color: #92282a;
+}

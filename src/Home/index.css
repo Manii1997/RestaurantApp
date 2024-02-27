@@ -1,0 +1,64 @@
+.resto-tab-menu-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 20px;
+  overflow: auto;
+}
+.dishes-container {
+  padding: 20px 20px;
+}
+@media screen and (min-width: 768px) {
+  .dishes-container {
+    padding: 20px 100px;
+  }
+}
+
+.dishes-item-container {
+  display: inline-block;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.spinner-container {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  padding: 10px;
+  overflow-y: auto;
+  column-gap: 20px;
+}
+
+.tab-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.each-tab-item.active-tab-item button {
+  color: #d65c5c;
+  border-bottom: 2px solid #d65c5c;
+}
+
+.each-tab-item button {
+  border-bottom: 2px solid transparent;
+}
+
+.customization-text {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #653ef3;
+}
