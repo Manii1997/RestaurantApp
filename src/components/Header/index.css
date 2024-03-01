@@ -31,7 +31,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  column-gap: 15px;
+  justify-content: center;
+  column-gap: 25px;
 }
 
 .header-cart-icon {
@@ -47,4 +48,43 @@
   .header {
     padding: 10px 100px;
   }
+}
+
+.restaurant-name {
+  text-decoration: none;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: lightblue;
+}
+
+.cart-icon-link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.cart-count-badge {
+  background-color: lightcoral;
+  padding: 5px 10px;
+  border-radius: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-icon-button {
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+}
+
+.cart-icon {
+  width: 30px;
+  height: auto;
 }

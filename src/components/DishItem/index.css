@@ -48,7 +48,7 @@
 .customize-btn {
   background-color: #338218;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 0px 20px;
   border: none;
   border-radius: 50px;
   width: max-content;
@@ -111,4 +111,12 @@
 
 .non-veg-round {
   background-color: #92282a;
+}
+
+.add-btn {
+  background-color: goldenrod;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  border: none;
 }

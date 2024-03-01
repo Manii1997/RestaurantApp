@@ -1,13 +1,9 @@
+import {useState, useContext} from 'react'
+import CartContext from '../../context/CartContext'
 import './index.css'
 
-const DishesItems = ({
-  ItemDetails,
-  cartItems,
-  addItemToCart,
-  removeItemFromCart,
-}) => {
+const DishItem = ({dishDetails}) => {
   const {
-    dishId,
     dishName,
     dishPrice,
     dishImage,
@@ -17,22 +13,24 @@ const DishesItems = ({
     dishDescription,
     dishAvailability,
     dishType,
-  } = ItemDetails
+  } = dishDetails
 
-  const onIncrementQuantity = () => addItemToCart(ItemDetails)
-  const onDecrementQuantity = () => removeItemFromCart(ItemDetails)
+  const [quantity, setQuantity] = useState(0)
+  const {addCartItem} = useContext(CartContext)
 
-  const getQuantity = () => {
-    const cartItem = cartItems.find(item => item.dishId === dishId)
-    return cartItem ? cartItem.quantity : 0
-  }
+  const onIncrementQuantity = () => setQuantity(prevState => prevState + 1)
+
+  const onDecrementQuantity = () =>
+    setQuantity(prevState => (prevState > 0 ? prevState - 1 : 0))
+
+  const onAddItemToCart = () => addCartItem({...dishDetails, quantity})
 
   const renderControllerButton = () => (
     <div className="customize-btn">
       <button type="button" className="minus-btn" onClick={onDecrementQuantity}>
         -
       </button>
-      <p className="quantity">{getQuantity()}</p>
+      <p className="quantity">{quantity}</p>
       <button type="button" className="plus-btn" onClick={onIncrementQuantity}>
         +
       </button>
@@ -47,9 +45,9 @@ const DishesItems = ({
             dishType === 1 ? 'non-veg-border' : ''
           }`}
         >
-          <div className={`veg-round ${dishType === 1 ? 'non-veg-round' : ''}`}>
-            {' '}
-          </div>
+          <div
+            className={`veg-round ${dishType === 1 ? 'non-veg-round' : ''}`}
+          />
         </div>
         <div className="name-currency-container">
           <h1 className="dish-name">{dishName}</h1>
@@ -61,6 +59,11 @@ const DishesItems = ({
           {!dishAvailability && <p>Not Available</p>}
           {addonCat.length !== 0 && (
             <p className="customization-text">Customizations available</p>
+          )}
+          {quantity > 0 && (
+            <button type="button" className="add-btn" onClick={onAddItemToCart}>
+              ADD TO CART
+            </button>
           )}
         </div>
         <div className="calories-container">
@@ -74,4 +77,4 @@ const DishesItems = ({
   )
 }
 
-export default DishesItems
+export default DishItem
