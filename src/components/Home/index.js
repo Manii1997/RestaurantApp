@@ -14,6 +14,7 @@ const Home = () => {
     tableMenuList.map(eachItem => ({
       menuCategory: eachItem.menu_category,
       menuCategoryId: eachItem.menu_category_id,
+      restaurantName: eachItem.restaurant_name,
       menuCategoryImage: eachItem.menu_category_image,
       categoryDishes: eachItem.category_dishes.map(eachDish => ({
         dishId: eachDish.dish_id,
@@ -43,7 +44,7 @@ const Home = () => {
     }
 
     fetchRestaurantApi()
-  }, [])
+  }, [setRestaurantName])
 
   const onUpdateActiveCategoryId = menuCategoryId =>
     setActiveCategoryId(menuCategoryId)

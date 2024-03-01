@@ -1,13 +1,5 @@
 {
     "cSpell.ignoreWords": [
-        "login",
-        "on",
-        "resto",
-        "successfull"
-    ],
-    "cSpell.words": [
-        "api",
-        "fetch",
-        "restaurent"
+        "resto"
     ]
 }
