@@ -16,11 +16,9 @@ const Header = props => {
 
   const renderCartIcon = () => (
     <div className="cart-icon-link">
-      <Link to="/cart">
-        <button type="button" className="cart-icon-button">
-          <AiOutlineShoppingCart className="cart-icon" />
-        </button>
-      </Link>
+      <button type="button" className="cart-icon-button">
+        <AiOutlineShoppingCart className="cart-icon" />
+      </button>
       <div>
         <p className="cart-count-badge">{cartList.length}</p>
       </div>
@@ -34,8 +32,12 @@ const Header = props => {
           <h1 className="header-heading">{restaurantName}</h1>
         </Link>
         <div className="header-cart-container">
-          <p className="header-cart-name">My Orders</p>
-          {renderCartIcon()}
+          <Link to="/cart" className="my-order-link">
+            <div className="my-order-container">
+              <p className="header-cart-name">My Orders</p>
+              {renderCartIcon()}
+            </div>
+          </Link>
           <button type="button" className="logout-btn" onClick={onLogout}>
             Logout
           </button>

@@ -88,3 +88,13 @@
   width: 30px;
   height: auto;
 }
+
+.my-order-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+.my-order-link {
+  text-decoration: none;
+}
