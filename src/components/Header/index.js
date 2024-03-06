@@ -16,7 +16,7 @@ const Header = props => {
 
   const renderCartIcon = () => (
     <div className="cart-icon-link">
-      <button type="button" className="cart-icon-button">
+      <button type="button" className="cart-icon-button" data-testid="cart">
         <AiOutlineShoppingCart className="cart-icon" />
       </button>
       <div>

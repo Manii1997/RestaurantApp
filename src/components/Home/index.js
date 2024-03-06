@@ -30,21 +30,21 @@ const Home = () => {
       })),
     }))
 
-  useEffect(() => {
-    const fetchRestaurantApi = async () => {
-      const ApiResponse = await fetch(
-        'https://run.mocky.io/v3/77a7e71b-804a-4fbd-822c-3e365d3482cc',
-      )
-      const data = await ApiResponse.json()
-      const updatedData = getUpdatedData(data[0].table_menu_list)
-      setResponse(updatedData)
-      setRestaurantName(data[0].restaurant_name)
-      setActiveCategoryId(updatedData[0].menuCategoryId)
-      setIsLoading(false)
-    }
+  const fetchRestaurantApi = async () => {
+    const api = 'https://run.mocky.io/v3/77a7e71b-804a-4fbd-822c-3e365d3482cc'
+    const apiResponse = await fetch(api)
+    const data = await apiResponse.json()
+    const updatedData = getUpdatedData(data[0].table_menu_list)
+    setResponse(updatedData)
+    setRestaurantName(data[0].restaurant_name)
+    setActiveCategoryId(updatedData[0].menuCategoryId)
+    setIsLoading(false)
+  }
 
+  useEffect(() => {
     fetchRestaurantApi()
-  }, [setRestaurantName])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const onUpdateActiveCategoryId = menuCategoryId =>
     setActiveCategoryId(menuCategoryId)

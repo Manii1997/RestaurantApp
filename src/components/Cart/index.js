@@ -11,7 +11,7 @@ const Cart = () => {
     <div className="cart-empty-container">
       <img
         src="https://i.imgur.com/gLlF09p.jpg"
-        alt="empty view"
+        alt="cart empty"
         className="empty-view-img"
       />
       <p className="empty-description">Your cart is Empty</p>
@@ -30,7 +30,7 @@ const Cart = () => {
           Remove All
         </button>
 
-        <ul>
+        <ul className="cart-item-list">
           {cartList.map(dish => (
             <CartItem key={dish.dishId} cartItemDetails={dish} />
           ))}
@@ -42,7 +42,9 @@ const Cart = () => {
   return (
     <div className="cart-page-container">
       <Header />
-      <div>{cartList.length === 0 ? renderEmptyView() : renderCartItems()}</div>
+      <div className="cart-list-container">
+        {cartList.length === 0 ? renderEmptyView() : renderCartItems()}
+      </div>
     </div>
   )
 }

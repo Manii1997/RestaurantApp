@@ -26,7 +26,6 @@
 
 .cart-items-header {
   padding: 25px 0;
-  width: 80%;
   margin: 0 auto;
 }
 
@@ -38,8 +37,22 @@
 .remove-all-btn {
   font-size: 14px;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 8px 0px;
   background-color: transparent;
   border: none;
   outline: none;
+}
+
+.cart-body-container {
+  width: 80%;
+}
+
+.cart-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-item-list {
+  padding: 0;
 }
