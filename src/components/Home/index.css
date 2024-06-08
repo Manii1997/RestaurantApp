@@ -55,6 +55,7 @@
 
 .each-tab-item button {
   border-bottom: 2px solid transparent;
+  cursor: pointer;
 }
 
 .customization-text {
